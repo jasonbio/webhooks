@@ -53,10 +53,11 @@ if (preg_match($pattern,$fileName,$n)) {
 
 // process season / episode numbers
 // you'll notice I've started splitting $tvdbshow_link and $episode into 1 / 2. This is because TVDB doesn't really handle
-// multi part/episode tv shows very well. For example, TV shows that have two segments per episode. Splitting the vars like
-// like this allows for testing of a second part that's been incorrectly labeled as an entirely different episode
-// tried to find as many patterns as possible in TVDBs API that would signal weird formatting like that, but it's almost 
-// random. Something to do with DVD order vs aired order? I dunno, but this is best I've gotten it so far.
+// multi part episodes very well. For example, TV shows that have two segments per episode will only count the first
+// segment as the complete episode. TV shows that do a full half-hour/hour long format shouldn't have this problem.
+// Splitting the vars like this allows for testing of a second part that's been incorrectly labeled as an entirely 
+// different episode. I tried to find patterns in TVDBs API that would allow detection weird formatting like that,
+// but there really isn't any. Something to do with DVD order vs aired order? I dunno, but this is best I've gotten it so far.
 if (is_int($seasonClean) && is_int($episodeClean)) {
 
 	$episode2;
