@@ -1,9 +1,13 @@
 <?php
-// this script takes an unedited video file name and uses as many techniques as possible to strip out the relevant data,
-// process it through THETVDB's API, and return beautiful looking info (widget)
-//
-// your media server must output containingfile.txt (most windows based media servers have some sort of function for this)
-// that can be accessed by this script.
+	/**
+	 * this script takes an unedited video file name and uses as many techniques as possible to strip out the relevant data,
+	 * process it through THETVDB's API, and return beautiful looking info (widget)
+	 * 
+	 * your media server must output containingfile.txt (most windows based media servers have some sort of function for this)
+	 * that can be accessed by this script.
+	 *
+	 * @author Jason Botello <contact@jasonb.io>
+	 **/
 
 // include the TheTVDB API files
 require 'TVDB.php'; // remember to update this file with your TVDB API key
