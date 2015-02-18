@@ -1,5 +1,7 @@
 <?php
-// webhook to handle Mandrill API call when event is triggered. In this case, it de-activates the email in the SQL table so it isn't triggered a second time
+// webhook to handle Mandrill API call when event is triggered.
+// NOTE: uses depreciated mysql_connect - use mysqli for production
+
 if ($_POST['mandrill_events']) {
 	$towrite = @file_get_contents('php://input');
 	$dec_url = urldecode($towrite);
